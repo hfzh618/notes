@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in); 
     Integer T, N;
@@ -26,7 +26,7 @@ class Main {
             map.put(fd_idx, words[1]);
         } else if(line.contains("dup2")){
             int origin_fd = Integer.parseInt(words[1]);
-            int new_fd = Integer.parseInt(words[1]);
+            int new_fd = Integer.parseInt(words[2]);
             map.put(new_fd, map.get(origin_fd));
         } else if(line.contains("dup")){
             System.out.println(fd_idx);
@@ -39,6 +39,7 @@ class Main {
         } else if(line.contains("close")){
             int fd = Integer.parseInt(words[1]);
             fds[fd] = false;
+            map.remove(fd);
         }
       }
     }
