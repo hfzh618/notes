@@ -52,8 +52,9 @@ public class Main {
 
     }
       for (ArrayList<String> ll:allList){
-        for (String str:ll)
-        System.out.println(str);
+        for (int i=0;i<ll.size();i++){
+        System.out.println(ll.get(i));
+        }
       }
   }
 }
