@@ -5,7 +5,8 @@ public class Main {
     Scanner sc = new Scanner(System.in); 
     Integer T, N;
     T = Integer.parseInt(sc.nextLine());
-    
+    ArrayList<ArrayList<String>> allList =  new ArrayList(); 
+
     for(int i = 0;i < T; i++) {
       ArrayList<String> list = new ArrayList(); 
       N = Integer.parseInt(sc.nextLine());
@@ -47,9 +48,12 @@ public class Main {
             map.remove(fd);
         }
       }
-      for (String str:list){
+      allList.add(list);
+
+    }
+      for (ArrayList<String> ll:allList){
+        for (String str:ll)
         System.out.println(str);
       }
-    }
   }
 }
